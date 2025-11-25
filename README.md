@@ -1,8 +1,8 @@
 # FHIR Patient Monitoring Dashboard
 
-A real-time patient monitoring dashboard built with React that integrates with HL7 FHIR R4 APIs to display vital signs, clinical alerts, and patient demographics. Designed for healthcare interoperability and clinical decision support.
+### 🔗 [Live Demo](https://fhir-patient-dashboard.vercel.app/)
 
-![Dashboard Preview](docs/images/dashboard-preview.png)
+A real-time patient monitoring dashboard built with React that integrates with HL7 FHIR R4 APIs to display vital signs, clinical alerts, and patient demographics. Designed for healthcare interoperability and clinical decision support.
 
 ## Why This Project
 
@@ -102,13 +102,10 @@ npm run dev
 
 ### Configuration
 
-To connect to a different FHIR server, update the base URL in `src/config.js`:
+To connect to a different FHIR server, update the base URL in the Dashboard component:
 
 ```javascript
-export const FHIR_CONFIG = {
-  baseUrl: 'https://your-fhir-server.com/fhir/R4',
-  // For authenticated servers, add SMART on FHIR config
-};
+const FHIR_BASE = 'https://your-fhir-server.com/fhir/R4';
 ```
 
 ## Project Structure
@@ -116,18 +113,10 @@ export const FHIR_CONFIG = {
 ```
 src/
 ├── components/
-│   ├── Dashboard.jsx        # Main dashboard container
-│   ├── PatientSearch.jsx    # FHIR patient search
-│   ├── VitalCard.jsx        # Individual vital sign display
-│   └── AlertPanel.jsx       # Clinical alerts component
-├── services/
-│   └── fhirClient.js        # FHIR API integration
-├── utils/
-│   ├── fhirParsers.js       # Resource parsing utilities
-│   └── clinicalRanges.js    # Reference range definitions
-├── constants/
-│   └── loincCodes.js        # LOINC code mappings
-└── App.jsx
+│   └── Dashboard.jsx        # Main dashboard with FHIR integration
+├── main.jsx                 # React entry point
+├── App.jsx                  # App wrapper
+└── index.css                # Tailwind styles
 ```
 
 ## Roadmap
